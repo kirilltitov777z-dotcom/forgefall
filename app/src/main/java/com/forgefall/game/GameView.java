@@ -182,9 +182,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
     }
 
     private float hash(int x, int y, int s) {
-        int n = x * 374761393 + y * 668265263 + s * 2246822519;
-        n = (n ^ (n >>> 13)) * 1274126177;
-        return ((n ^ (n >>> 16)) & 0x7fffffff) / (float) 0x7fffffff;
+        long n = x * 374761393L + y * 668265263L + s * 2246822519L;
+        n = (n ^ (n >>> 13)) * 1274126177L;
+        return ((n ^ (n >>> 16)) & 0x7fffffffL) / (float) 0x7fffffff;
     }
 
     private void drawBuildings(Canvas c) {
