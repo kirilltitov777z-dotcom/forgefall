@@ -117,7 +117,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
                 last = now;
                 if (dt > 0.05f) dt = 0.05f;
                 if (!game.gameOver) game.update(dt);
-                draw(c);
+                renderFrame(c);
                 getHolder().unlockCanvasAndPost(c);
             }
         }
@@ -125,7 +125,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
 
     /* ---------- Отрисовка ---------- */
 
-    private void draw(Canvas c) {
+    private void renderFrame(Canvas c) {
         c.drawColor(SAND);
 
         c.save();
